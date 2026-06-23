@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf8f4;
+  --foreground: #141e38;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* اعداد فارسی برای کل صفحه به‌صورت پیش‌فرض نمایش داده می‌شوند چون در دیتا فارسی هستند */
+
+@layer components {
+  .container-wibe {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember-500 px-6 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-ember-600 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember-600;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 bg-white px-6 py-3 text-sm font-bold text-navy-700 transition hover:border-navy-300 hover:bg-navy-50 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-400;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-bold text-navy-700 transition hover:bg-navy-50;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-navy-100 bg-white/80 px-3 py-1.5 text-xs font-medium text-navy-700 transition hover:border-azure-300 hover:text-azure-600;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full bg-navy-900/85 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur;
+  }
+
+  .section-title {
+    @apply text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl;
+  }
+
+  .section-sub {
+    @apply mt-2 max-w-2xl text-sm leading-7 text-navy-500 sm:text-base;
+  }
+}
+
+/* لایه‌ی تیره‌ی پایین کارت‌ها تا متن سفید روی هر تونالیته‌ای خوانا بماند */
+.card-scrim {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.1) 45%,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+
+/* تونالیته‌ی رنگی ناحیه‌ی تصویر کارت‌ها */
+.tone-navy {
+  background-image: linear-gradient(135deg, #22335a 0%, #0f1729 100%);
+}
+.tone-ember {
+  background-image: linear-gradient(135deg, #ff7a45 0%, #e2480f 100%);
+}
+.tone-plum {
+  background-image: linear-gradient(135deg, #7b3f73 0%, #3f2046 100%);
+}
+.tone-forest {
+  background-image: linear-gradient(135deg, #2f6f5b 0%, #163d34 100%);
+}
+.tone-sand {
+  background-image: linear-gradient(135deg, #b9803f 0%, #6e431a 100%);
+}
+.tone-ocean {
+  background-image: linear-gradient(135deg, #2f6f8f 0%, #173f52 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
