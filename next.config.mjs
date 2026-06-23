@@ -38,6 +38,8 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // خروجی مستقل برای ایمیجِ سبکِ Docker (فقط فایل‌های لازم را کپی می‌کند).
+  output: "standalone",
   images: {
     // بهینه‌سازی فعال: Next تصاویر را به AVIF/WebP و سایزهای ریسپانسیو تبدیل می‌کند.
     formats: ["image/avif", "image/webp"],
